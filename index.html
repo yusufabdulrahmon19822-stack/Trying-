@@ -1,0 +1,534 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting the Mind (CTM) Community — Come As You Are</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ctmDark: '#140A01',
+                        ctmSecondary: '#6B3505',
+                        ctmOffWhite: '#F5F1ED',
+                        ctmBrightOrange: '#FF8921',
+                        ctmBurntOrange: '#BD5D09',
+                        ctmDeep: '#241204',
+                        ctmSoftOrange: '#FFA14E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Newsreader', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth styling and scrollbar */
+        body {
+            background-color: #140A01;
+            color: #F5F1ED;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Newsreader', serif;
+        }
+        /* Subtle noise or texture feel */
+        .glass-panel {
+            background: rgba(36, 18, 4, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 137, 33, 0.15);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 20%, rgba(107, 53, 5, 0.35) 0%, rgba(20, 10, 1, 0.95) 70%);
+        }
+    </style>
+</head>
+<body class="bg-ctmDark text-ctmOffWhite antialiased selection:bg-ctmBrightOrange selection:text-ctmDark">
+
+    <script>
+        /**
+         * ASSET_MAP: Centralized repository-relative paths for all original CTM community assets.
+         * TO DEPLOY ON GITHUB: Place your image files in your repository (e.g., /assets/images/) 
+         * and update the string values below to match your exact filenames.
+         */
+        const ASSET_MAP = {
+            logoLight: "REPLACE_WITH_EXACT_GITHUB_PATH_LOGO_LIGHT", // Supplied CTM logo artwork for light backgrounds
+            logoDark: "REPLACE_WITH_EXACT_GITHUB_PATH_LOGO_DARK",   // Supplied CTM logo artwork for dark backgrounds
+            julyFlyer: "REPLACE_WITH_EXACT_GITHUB_PATH_JULY_FLYER", // July "Navigating Your Career Path With Clarity" flyer
+            julyMeetScreenshot: "REPLACE_WITH_EXACT_GITHUB_PATH_JULY_MEET", // July Google Meet/session screenshot
+            skillFlyer: "REPLACE_WITH_EXACT_GITHUB_PATH_SKILL_FLYER", // "Turn Your Skill Into Magnetic Income!" learning-session flyer
+            bookImage: "REPLACE_WITH_EXACT_GITHUB_PATH_BOOK_COVER", // "I See You" book promotional image
+            praisePortrait: "REPLACE_WITH_EXACT_GITHUB_PATH_PRAISE_PORTRAIT", // Praise God's original portrait
+            praiseTestimonial: "REPLACE_WITH_EXACT_GITHUB_PATH_PRAISE_SCREENSHOT", // Praise God's original CTM testimonial screenshot
+            additionalActivity1: "REPLACE_WITH_EXACT_GITHUB_PATH_ACTIVITY_1", // Community activity screenshot 1
+            additionalActivity2: "REPLACE_WITH_EXACT_GITHUB_PATH_ACTIVITY_2"  // Community activity screenshot 2
+        };
+
+        const WHATSAPP_LINK = "https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ";
+        const BOOK_LINK = "https://bit.ly/ISeeyouCRAFTER";
+    </script>
+
+    <header class="sticky top-0 z-50 bg-ctmDark/90 backdrop-blur-md border-b border-ctmSecondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo / Name -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg group-hover:border-ctmBrightOrange transition-colors">
+                    CTM
+                </div>
+                <div>
+                    <span class="font-serif text-xl tracking-wide font-medium text-ctmOffWhite block">Crafting the Mind</span>
+                    <span class="text-xs text-ctmSoftOrange uppercase tracking-wider block">Community</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ctmOffWhite/80">
+                <a href="#about" class="hover:text-ctmBrightOrange transition-colors">About</a>
+                <a href="#community-life" class="hover:text-ctmBrightOrange transition-colors">Community Life</a>
+                <a href="#opportunities" class="hover:text-ctmBrightOrange transition-colors">Opportunities</a>
+                <a href="#stories" class="hover:text-ctmBrightOrange transition-colors">Member Stories</a>
+                <a href="#book" class="hover:text-ctmBrightOrange transition-colors">The Book</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" 
+                   class="bg-ctmBrightOrange text-ctmDark font-semibold px-5 py-2.5 rounded-full text-sm shadow-lg hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/20 transition-all transform hover:-translate-y-0.5">
+                    Join Community (Free)
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-ctmOffWhite p-2 focus:outline-none" aria-label="Toggle navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ctmDeep border-b border-ctmSecondary/40 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">About</a>
+            <a href="#community-life" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Community Life</a>
+            <a href="#opportunities" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Opportunities</a>
+            <a href="#stories" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Member Stories</a>
+            <a href="#book" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">The Book</a>
+            <div class="pt-4 border-t border-ctmSecondary/30">
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" 
+                   class="block w-full text-center bg-ctmBrightOrange text-ctmDark font-bold py-3 rounded-xl shadow-md">
+                    Join Community (Free)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative hero-glow pt-20 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-ctmSecondary/20">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Community Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ctmSecondary/30 border border-ctmBrightOrange/30 text-ctmSoftOrange text-xs sm:text-sm font-medium mb-8 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-ctmBrightOrange animate-pulse"></span>
+                <span>Home to 200+ Active Crafters</span>
+            </div>
+
+            <!-- Hero Headline -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-ctmOffWhite leading-[1.15] mb-6">
+                Come as you are.<br />
+                <span class="italic text-ctmSoftOrange">Become better than you were.</span>
+            </h1>
+
+            <!-- Supporting Message -->
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-ctmOffWhite/80 font-normal leading-relaxed mb-10">
+                A community for professionals and people building meaningful lives, careers, skills, and ideas with a positive mindset. We put mindset first because how we think influences how we work, build, grow, and navigate life.
+            </p>
+
+            <!-- CTA Group -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto bg-ctmBrightOrange text-ctmDark font-semibold px-8 py-4 rounded-full text-base shadow-xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/30 transition-all transform hover:-translate-y-0.5 text-center">
+                    JOIN THE CTM COMMUNITY — IT’S CURRENTLY FREE.
+                </a>
+                <a href="#community-life" 
+                   class="w-full sm:w-auto bg-transparent border border-ctmSecondary text-ctmOffWhite hover:border-ctmBrightOrange font-medium px-8 py-4 rounded-full text-base transition-all text-center">
+                    See What Happens Inside
+                </a>
+            </div>
+
+            <!-- Proof footer in hero -->
+            <div class="mt-12 pt-8 border-t border-ctmSecondary/30 flex flex-wrap justify-center items-center gap-6 text-xs sm:text-sm text-ctmOffWhite/60 tracking-wider uppercase">
+                <span>Real conversations</span>
+                <span class="text-ctmBrightOrange">•</span>
+                <span>Real opportunities</span>
+                <span class="text-ctmBrightOrange">•</span>
+                <span>Real growth</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Our Core Philosophy</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">More than just a WhatsApp group. A space for intentional craft.</h2>
+            <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
+                CTM is designed to cut through noise and superficial networking. Here, professionals, creators, and thinkers come together to exchange clarity, share experiences, and support one another's personal and professional evolution.
+            </p>
+        </div>
+
+        <!-- 4 Core Pillars Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Pillar 1 -->
+            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
+                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+                    01
+                </div>
+                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Mindset First</h3>
+                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                    How you think dictates what you build. We nurture mental resilience, emotional intelligence, and a positive outlook on challenges.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
+                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+                    02
+                </div>
+                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Real Conversations</h3>
+                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                    No fluff or empty hype. Honest dialogue about career dilemmas, creative roadblocks, life choices, and personal discoveries.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
+                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+                    03
+                </div>
+                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Practical Opportunities</h3>
+                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                    Access real job leads, gig openings, skill-building sessions, and collaborative partnerships shared by active members.
+                </p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
+                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+                    04
+                </div>
+                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Intentional Growth</h3>
+                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                    Progress tracked over time with peer accountability, book discussions, learning sprints, and supportive feedback loops.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="community-life" class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Inside the Community</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite">What Happens Inside CTM</h2>
+                </div>
+                <p class="max-w-md text-ctmOffWhite/70 text-sm sm:text-base">
+                    Every week brings engaging sessions, spontaneous insights, and structured touchpoints designed to keep you inspired and connected.
+                </p>
+            </div>
+
+            <!-- Editorial Grid of Community Activities -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
+                        <!-- Image Container with Asset Map Hook -->
+                        <img src="" data-asset-key="julyMeetScreenshot" alt="CTM Google Meet Session" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Google+Meet+Session';"
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Live Sessions</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">CTM Conversation Sessions</h3>
+                            <p class="text-sm text-ctmOffWhite/70">Deep-dive Google Meet discussions tackling career pivots, clarity, mindset shifts, and real-world problem solving.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
+                        <img src="" data-asset-key="additionalActivity1" alt="Daily Conversations & Story Tuesday" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Story+Tuesday+%26+Daily+Talks';"
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Weekly Traditions</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">Story Tuesday & Friday Party Night</h3>
+                            <p class="text-sm text-ctmOffWhite/70">Signature weekly moments where members share personal reflections, unwind, celebrate milestones, and connect on a human level.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
+                        <img src="" data-asset-key="additionalActivity2" alt="Opportunities & LinkedIn Activity" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Opportunities+Board';"
+                             class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Growth & Gigs</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">Job Leads & Practical Opportunities</h3>
+                            <p class="text-sm text-ctmOffWhite/70">A dedicated stream for job opportunities, freelance gigs, learning resources, and mutual recommendations among crafters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opportunities" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Continuous Learning</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Learning Sessions & Community Highlights</h2>
+            <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
+                We regularly curate impactful masterclasses and sessions designed to sharpen skills, increase earning potential, and bring professional clarity.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Flyer 1 -->
+            <div class="glass-panel p-6 rounded-3xl flex flex-col sm:flex-row gap-6 items-center">
+                <div class="w-full sm:w-1/2 h-64 rounded-2xl overflow-hidden bg-ctmSecondary/30 border border-ctmSecondary/50 flex items-center justify-center">
+                    <img src="" data-asset-key="julyFlyer" alt="Navigating Your Career Path With Clarity Flyer"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/241204/FFA14E?text=Career+Path+Flyer';"
+                         class="w-full h-full object-contain">
+                </div>
+                <div class="w-full sm:w-1/2 space-y-4">
+                    <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Past Masterclass Highlight</span>
+                    <h3 class="font-serif text-2xl text-ctmOffWhite">Navigating Your Career Path With Clarity</h3>
+                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                        A foundational July session focused on breaking through career confusion, aligning strengths with market demands, and charting sustainable professional trajectories.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Flyer 2 -->
+            <div class="glass-panel p-6 rounded-3xl flex flex-col sm:flex-row gap-6 items-center">
+                <div class="w-full sm:w-1/2 h-64 rounded-2xl overflow-hidden bg-ctmSecondary/30 border border-ctmSecondary/50 flex items-center justify-center">
+                    <img src="" data-asset-key="skillFlyer" alt="Turn Your Skill Into Magnetic Income! Flyer"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/241204/FFA14E?text=Magnetic+Income+Flyer';"
+                         class="w-full h-full object-contain">
+                </div>
+                <div class="w-full sm:w-1/2 space-y-4">
+                    <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Skill & Income Series</span>
+                    <h3 class="font-serif text-2xl text-ctmOffWhite">Turn Your Skill Into Magnetic Income!</h3>
+                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                        An actionable learning session showing members how to package existing knowledge, position expertise effectively, and attract paying clients naturally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stories" class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Genuine Proof</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Words from Real Crafters</h2>
+                <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
+                    No fabricated success claims. Hear directly from members who experience the depth and value of CTM every single day.
+                </p>
+            </div>
+
+            <!-- Testimonial Featured Card (Praise God) -->
+            <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl relative">
+                <div class="absolute top-6 right-8 text-ctmBrightOrange/20 font-serif text-8xl leading-none select-none pointer-events-none">“</div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
+                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex-shrink-0 flex items-center justify-center">
+                        <img src="" data-asset-key="praisePortrait" alt="Praise God Portrait"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/241204/FFA14E?text=Praise+God';"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4 text-center md:text-left flex-1">
+                        <blockquote class="font-serif text-lg sm:text-xl text-ctmOffWhite/90 italic leading-relaxed">
+                            “What made me stay on CTM is the honest conversations that take place on the different sections of CTM.<br><br>
+                            And also<br>
+                            The way members and non-members receive clarity on burning questions or issues raised.”
+                        </blockquote>
+                        <div>
+                            <div class="font-bold text-ctmOffWhite text-base">Praise God</div>
+                            <div class="text-xs text-ctmSoftOrange uppercase tracking-wider mt-0.5">Teacher Educator</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional screenshot reference note -->
+                <div class="mt-8 pt-6 border-t border-ctmSecondary/30 flex items-center justify-between text-xs text-ctmOffWhite/50 flex-wrap gap-4">
+                    <span>Verified CTM Community Member</span>
+                    <span class="text-ctmSoftOrange">Real conversation proof mapped in repository assets.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-panel p-8 sm:p-14 rounded-3xl flex flex-col lg:flex-row gap-12 items-center">
+            <!-- Book Artwork -->
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <div class="max-w-xs sm:max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-ctmBrightOrange/30 bg-ctmSecondary/20">
+                    <img src="" data-asset-key="bookImage" alt="I See You Book Promotional Image"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x550/241204/FFA14E?text=I+See+You+Book';"
+                         class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <!-- Book Details & CTA -->
+            <div class="w-full lg:w-1/2 space-y-6">
+                <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Recommended Reading & Encouragement</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-ctmOffWhite">The “I See You” Book</h2>
+                <p class="text-base sm:text-lg text-ctmOffWhite/80 leading-relaxed">
+                    Encouragement for the journey, mindset shifts for growth, faith, purpose, clarity, and a heartfelt reminder that you matter. Written to accompany you through seasons of building and personal discovery.
+                </p>
+                <div class="pt-2">
+                    <a href="https://bit.ly/ISeeyouCRAFTER" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-3 bg-ctmBrightOrange text-ctmDark font-bold px-8 py-4 rounded-full text-base shadow-xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/30 transition-all transform hover:-translate-y-0.5">
+                        <span>EXPLORE THE BOOK</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Intentional Value</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Why Join CTM Today?</h2>
+                <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
+                    Membership is open, welcoming, and entirely free. Here is what you gain by stepping inside our WhatsApp community:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Point 1 -->
+                <div class="glass-panel p-8 rounded-3xl space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
+                    <h3 class="font-serif text-xl text-ctmOffWhite">Honest Conversations</h3>
+                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                        Participate in meaningful, unfiltered discussions where professional dilemmas and life questions receive thoughtful perspective.
+                    </p>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="glass-panel p-8 rounded-3xl space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
+                    <h3 class="font-serif text-xl text-ctmOffWhite">Clarity & Perspective</h3>
+                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                        Learn from the diverse lived experiences, wisdom, and constructive feedback of peers navigating similar journeys.
+                    </p>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="glass-panel p-8 rounded-3xl space-y-4">
+                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
+                    <h3 class="font-serif text-xl text-ctmOffWhite">Relevant Opportunities</h3>
+                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
+                        Discover job leads, skill-sharing sessions, and collaborative openings shared by members who want to see others win.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-28 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-ctmSecondary/20 to-transparent pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10 space-y-8">
+            <h2 class="font-serif text-4xl sm:text-6xl text-ctmOffWhite leading-tight">
+                Come as you are.<br />
+                <span class="italic text-ctmSoftOrange">Become better than you were.</span>
+            </h2>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-ctmOffWhite/80">
+                Join our active community of 200+ Crafters. Participate in honest conversations, learn, share, and grow alongside people building meaningful lives.
+            </p>
+            <div>
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer"
+                   class="inline-block bg-ctmBrightOrange text-ctmDark font-bold px-10 py-5 rounded-full text-base sm:text-lg shadow-2xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/40 transition-all transform hover:-translate-y-1">
+                    JOIN THE CTM COMMUNITY — IT’S CURRENTLY FREE.
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-ctmDeep border-t border-ctmSecondary/40 py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <!-- Brand info -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg">
+                    CTM
+                </div>
+                <div>
+                    <span class="font-serif text-lg tracking-wide text-ctmOffWhite block">Crafting the Mind</span>
+                    <span class="text-xs text-ctmSoftOrange">Real conversations. Real opportunities. Real growth.</span>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-ctmOffWhite/70">
+                <a href="#about" class="hover:text-ctmBrightOrange transition-colors">About</a>
+                <a href="#community-life" class="hover:text-ctmBrightOrange transition-colors">Community Life</a>
+                <a href="#opportunities" class="hover:text-ctmBrightOrange transition-colors">Opportunities</a>
+                <a href="#stories" class="hover:text-ctmBrightOrange transition-colors">Member Stories</a>
+                <a href="#book" class="hover:text-ctmBrightOrange transition-colors">The Book</a>
+                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="text-ctmBrightOrange font-semibold hover:underline">WhatsApp Community</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-xs text-ctmOffWhite/50 text-center md:text-right">
+                &copy; 2026 Crafting the Mind (CTM) Community.<br />All rights reserved.
+            </div>
+        </div>
+    <footer>Yusuf Creative</footer>
+
+    <script>
+        // Mobile Menu Toggle Functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Asset Map Injector: Maps data-asset-key attributes to the ASSET_MAP paths automatically
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-asset-key]');
+            images.forEach(img => {
+                const key = img.getAttribute('data-asset-key');
+                if (ASSET_MAP[key] && !ASSET_MAP[key].includes('REPLACE_WITH_EXACT_GITHUB_PATH')) {
+                    img.src = ASSET_MAP[key];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
