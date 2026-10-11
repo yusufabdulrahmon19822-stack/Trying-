@@ -1,532 +1,91 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafting the Mind (CTM) Community — Come As You Are</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ctmDark: '#140A01',
-                        ctmSecondary: '#6B3505',
-                        ctmOffWhite: '#F5F1ED',
-                        ctmBrightOrange: '#FF8921',
-                        ctmBurntOrange: '#BD5D09',
-                        ctmDeep: '#241204',
-                        ctmSoftOrange: '#FFA14E',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Newsreader', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom smooth styling and scrollbar */
-        body {
-            background-color: #140A01;
-            color: #F5F1ED;
-            font-family: 'Inter', sans-serif;
-        }
-        .font-serif {
-            font-family: 'Newsreader', serif;
-        }
-        /* Subtle noise or texture feel */
-        .glass-panel {
-            background: rgba(36, 18, 4, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 137, 33, 0.15);
-        }
-        .hero-glow {
-            background: radial-gradient(circle at 50% 20%, rgba(107, 53, 5, 0.35) 0%, rgba(20, 10, 1, 0.95) 70%);
-        }
-    </style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#140A01">
+  <meta name="description" content="Crafting the Mind (CTM) is a community for real conversations, meaningful growth, learning and opportunities.">
+  <title>Crafting the Mind (CTM) Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#140A01;--brown:#6B3505;--cream:#F5F1ED;--orange:#FF8921;--warm:#BD5D09;--deep:#241204;--light:#FFA14E;--white:#fffaf5;--muted:#b9a99a;--line:rgba(245,241,237,.14);--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font-family:'DM Sans',sans-serif;line-height:1.65}a{color:inherit}img{display:block;max-width:100%}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.section{padding:88px 0}.eyebrow{color:var(--light);text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:700}.headline{font-family:Newsreader,serif;font-weight:500;line-height:1.04;letter-spacing:-.035em;font-size:clamp(2.5rem,5.5vw,4.8rem);margin:.6rem 0 1rem}.subhead{font-family:Newsreader,serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1.1;letter-spacing:-.025em;margin:.5rem 0 1rem}.intro{color:#d0c3b7;max-width:680px;font-size:1.05rem}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700}.brand img{width:54px;height:48px;object-fit:contain}.navlinks{display:flex;align-items:center;gap:22px;font-size:.9rem;color:#e5d8cb}.navlinks a{text-decoration:none}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 19px;border-radius:999px;background:var(--orange);color:var(--ink);font-weight:800;text-decoration:none;border:1px solid var(--orange);transition:.2s}.btn:hover{transform:translateY(-2px);background:var(--light)}.btn.secondary{background:transparent;color:var(--cream);border-color:rgba(245,241,237,.3)}.hero{position:relative;overflow:hidden;padding:58px 0 90px;background:radial-gradient(ellipse at 85% 20%,rgba(189,93,9,.22),transparent 40%),linear-gradient(130deg,#140A01,#241204 70%,#301805)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:52px}.hero .headline{max-width:740px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:27px 0}.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px}.stat strong{display:block;font-size:1.55rem;color:var(--light)}.stat span{font-size:.83rem;color:#c7b7a8}.hero-visual{position:relative;padding:18px;border:1px solid rgba(255,161,78,.28);border-radius:28px;background:rgba(245,241,237,.045);box-shadow:0 30px 90px #0005}.hero-visual img{width:100%;height:370px;object-fit:contain;border-radius:18px;background:#f5f1ed}.float-note{position:absolute;bottom:-18px;left:-15px;background:var(--cream);color:var(--ink);padding:13px 17px;border-radius:14px;font-size:.87rem;font-weight:700;box-shadow:0 12px 32px #0004}.section-head{max-width:740px;margin-bottom:36px}.cream-section{background:var(--cream);color:var(--ink)}.cream-section .intro{color:#65584d}.cream-section .eyebrow{color:var(--warm)}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.card{padding:25px;border:1px solid var(--line);border-radius:20px;background:rgba(245,241,237,.045)}.cream-section .card{background:#fffaf6;border-color:#e7dcd1}.card h3{font-family:Newsreader,serif;font-size:1.55rem;line-height:1.2;margin:.55rem 0}.card p{color:#cdbeb0;margin:.5rem 0 0}.cream-section .card p{color:#65584d}.number{font-size:.78rem;letter-spacing:.14em;color:var(--light);font-weight:800}.cream-section .number{color:var(--warm)}.card-image{width:100%;height:240px;object-fit:contain;background:#211206;border-radius:13px;margin:0 0 18px}.cream-section .card-image{background:#e8ded4}.schedule{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.schedule-item{display:flex;gap:16px;padding:20px;border:1px solid var(--line);border-radius:16px}.schedule-day{flex:0 0 78px;color:var(--light);font-weight:800}.schedule-item h3{margin:0 0 4px}.schedule-item p{margin:0;color:#cdbeb0}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.gallery figure{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#211206}.gallery img{width:100%;height:260px;object-fit:contain;background:#f5f1ed}.gallery figcaption{padding:12px 14px;font-size:.9rem;color:#e4d7ca}.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:center}.portrait{width:100%;max-height:480px;object-fit:cover;border-radius:22px;background:#f5f1ed}.quote{font-family:Newsreader,serif;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.35}.person{display:flex;align-items:center;gap:14px;margin-top:22px}.person img{width:64px;height:64px;border-radius:50%;object-fit:cover;background:#f5f1ed}.person strong{display:block}.person span{color:#cdbeb0;font-size:.9rem}.resource-list{display:grid;gap:12px}.resource{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 18px;border:1px solid #e7dcd1;border-radius:14px;background:#fffaf6}.resource p{margin:2px 0 0;color:#65584d;font-size:.9rem}.resource a{color:var(--warm);font-weight:800;text-decoration:none;white-space:nowrap}.book-art{width:100%;max-height:350px;object-fit:contain;background:#fffaf6;border-radius:18px}.cta-band{padding:42px;border-radius:26px;background:linear-gradient(120deg,#6B3505,#BD5D09);display:flex;align-items:center;justify-content:space-between;gap:24px}.cta-band h2{font-family:Newsreader,serif;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;margin:0}.cta-band p{max-width:620px;margin:12px 0 0;color:#f5e3d3}.footer{padding:36px 0;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px}.footer p{margin:5px 0;color:#b9a99a;font-size:.88rem}.footer .brand img{width:52px}.fineprint{font-size:.8rem;color:#9e8e80;margin-top:20px}.missing{display:none}
+    @media(max-width:850px){.hero-grid,.split{grid-template-columns:1fr}.hero-visual{max-width:600px}.grid-3,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{display:none}.schedule{grid-template-columns:1fr}.cta-band{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 28px))}.section{padding:62px 0}.hero{padding:36px 0 70px}.hero-visual img{height:260px}.grid-2,.grid-3,.gallery{grid-template-columns:1fr}.gallery img{height:230px}.card{padding:20px}.resource{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.cta-band{padding:26px}.stats{gap:18px}}
+  </style>
 </head>
-<body class="bg-ctmDark text-ctmOffWhite antialiased selection:bg-ctmBrightOrange selection:text-ctmDark">
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#top" aria-label="Crafting the Mind home"><img src="./images/263514.png" alt="Crafting the Mind CTM logo"><span>Crafting the Mind</span></a>
+    <nav class="navlinks" aria-label="Main navigation"><a href="#about">About</a><a href="#inside">Inside CTM</a><a href="#opportunities">Opportunities</a><a href="#learning">Learning</a><a href="#resources">Resources</a></nav>
+    <a class="btn" href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener">Join CTM ↗</a>
+  </header>
 
-    <script>
-        /**
-         * ASSET_MAP: Centralized repository-relative paths for all original CTM community assets.
-         * TO DEPLOY ON GITHUB: Place your image files in your repository (e.g., /assets/images/) 
-         * and update the string values below to match your exact filenames.
-         */
-        const ASSET_MAP = {
-            logoLight: "REPLACE_WITH_EXACT_GITHUB_PATH_LOGO_LIGHT", // Supplied CTM logo artwork for light backgrounds
-            logoDark: "REPLACE_WITH_EXACT_GITHUB_PATH_LOGO_DARK",   // Supplied CTM logo artwork for dark backgrounds
-            julyFlyer: "REPLACE_WITH_EXACT_GITHUB_PATH_JULY_FLYER", // July "Navigating Your Career Path With Clarity" flyer
-            julyMeetScreenshot: "REPLACE_WITH_EXACT_GITHUB_PATH_JULY_MEET", // July Google Meet/session screenshot
-            skillFlyer: "REPLACE_WITH_EXACT_GITHUB_PATH_SKILL_FLYER", // "Turn Your Skill Into Magnetic Income!" learning-session flyer
-            bookImage: "REPLACE_WITH_EXACT_GITHUB_PATH_BOOK_COVER", // "I See You" book promotional image
-            praisePortrait: "REPLACE_WITH_EXACT_GITHUB_PATH_PRAISE_PORTRAIT", // Praise God's original portrait
-            praiseTestimonial: "REPLACE_WITH_EXACT_GITHUB_PATH_PRAISE_SCREENSHOT", // Praise God's original CTM testimonial screenshot
-            additionalActivity1: "REPLACE_WITH_EXACT_GITHUB_PATH_ACTIVITY_1", // Community activity screenshot 1
-            additionalActivity2: "REPLACE_WITH_EXACT_GITHUB_PATH_ACTIVITY_2"  // Community activity screenshot 2
-        };
+  <main id="top">
+    <section class="hero"><div class="wrap hero-grid"><div>
+      <div class="eyebrow">A community for becoming</div>
+      <h1 class="headline">Come as you are. Become better than you were.</h1>
+      <p class="intro">Crafting the Mind (CTM) is a community for people building meaningful lives, careers, skills and ideas. We put mindset first, because how we think shapes how we work, grow and navigate life.</p>
+      <div class="hero-actions"><a class="btn" href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener">Join the CTM Community — It’s Currently Free ↗</a><a class="btn secondary" href="#inside">Explore the community</a></div>
+      <div class="stats"><div class="stat"><strong>200+</strong><span>Crafters</span></div><div class="stat"><strong>Real talk</strong><span>Honest conversations</span></div><div class="stat"><strong>Real growth</strong><span>Learning and opportunities</span></div></div>
+    </div><div class="hero-visual"><img src="./images/263515.png" alt="Crafting the Mind CTM logo on its original background"><div class="float-note">Real conversations. Real opportunities. Real growth.</div></div></div></section>
 
-        const WHATSAPP_LINK = "https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ";
-        const BOOK_LINK = "https://bit.ly/ISeeyouCRAFTER";
-    </script>
+    <section class="section cream-section" id="about"><div class="wrap split"><div><div class="eyebrow">More than a WhatsApp group</div><h2 class="subhead">A place to think, connect and grow — together.</h2></div><div><p class="intro">CTM brings people together around the everyday work of becoming: how we see ourselves, how we respond to life, how we build our careers and how we show up for one another.</p><div class="grid-2" style="margin-top:22px"><article class="card"><div class="number">01 / MINDSET</div><h3>Start from within</h3><p>Make room for reflection, clarity and healthier ways to approach life and work.</p></article><article class="card"><div class="number">02 / COMMUNITY</div><h3>Grow with people</h3><p>Learn from real experiences, different perspectives and people on their own journeys.</p></article></div></div></div></section>
 
-    <header class="sticky top-0 z-50 bg-ctmDark/90 backdrop-blur-md border-b border-ctmSecondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo / Name -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg group-hover:border-ctmBrightOrange transition-colors">
-                    CTM
-                </div>
-                <div>
-                    <span class="font-serif text-xl tracking-wide font-medium text-ctmOffWhite block">Crafting the Mind</span>
-                    <span class="text-xs text-ctmSoftOrange uppercase tracking-wider block">Community</span>
-                </div>
-            </a>
+    <section class="section" id="inside"><div class="wrap"><div class="section-head"><div class="eyebrow">What happens inside</div><h2 class="subhead">There’s room for the real you here.</h2><p class="intro">From thoughtful conversations to Friday fun, CTM makes space for learning, connection and everyday life.</p></div>
+      <div class="grid-3">
+        <article class="card"><img class="card-image" src="./images/259086.png" alt="Original CTM daily conversation screenshot"><div class="number">OPEN DAILY</div><h3>Daily Conversation</h3><p>A space for everyday work, life, business, ideas, wins, challenges, pictures and videos. Join in whenever you can.</p></article>
+        <article class="card"><img class="card-image" src="./images/259093.png" alt="Original CTM Story Tuesday screenshot"><div class="number">TUESDAYS · 8 PM</div><h3>Story Tuesday</h3><p>Bring a real-life situation or question. Hear different perspectives and find clarity in a supportive conversation.</p></article>
+        <article class="card"><img class="card-image" src="./images/259102.png" alt="Original CTM Conversation Session screenshot"><div class="number">WEDNESDAYS · 8 PM</div><h3>CTM Conversation Session</h3><p>Our Becoming Journey: a three-month mindset and growth journey built around intentional conversations.</p></article>
+        <article class="card"><img class="card-image" src="./images/259089.png" alt="Original CTM Friday Party Night screenshot"><div class="number">FRIDAYS · 8 PM</div><h3>CTM Party Night</h3><p>Games, interaction, laughter and random conversations. Growth matters, and so does having fun together.</p></article>
+        <article class="card"><img class="card-image" src="./images/263512.png" alt="Original CTM Google Meet learning session screenshot"><div class="number">LEARN TOGETHER</div><h3>Learning sessions</h3><p>Practical classes, guest sessions, webinars and Q&amp;A that help Crafters build useful skills and confidence.</p></article>
+        <article class="card"><img class="card-image" src="./images/259113.png" alt="Original CTM LinkedIn community activity screenshot"><div class="number">SHOW UP & CONNECT</div><h3>Community activity</h3><p>Discover ways to share your work, support other Crafters and build meaningful professional connections.</p></article>
+      </div>
+    </div></section>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ctmOffWhite/80">
-                <a href="#about" class="hover:text-ctmBrightOrange transition-colors">About</a>
-                <a href="#community-life" class="hover:text-ctmBrightOrange transition-colors">Community Life</a>
-                <a href="#opportunities" class="hover:text-ctmBrightOrange transition-colors">Opportunities</a>
-                <a href="#stories" class="hover:text-ctmBrightOrange transition-colors">Member Stories</a>
-                <a href="#book" class="hover:text-ctmBrightOrange transition-colors">The Book</a>
-            </nav>
+    <section class="section cream-section"><div class="wrap"><div class="section-head"><div class="eyebrow">A rhythm you can count on</div><h2 class="subhead">Make room for your becoming.</h2><p class="intro">Our regular community touchpoints give you different ways to participate.</p></div><div class="schedule">
+      <div class="schedule-item"><div class="schedule-day">DAILY</div><div><h3>Daily Conversation</h3><p>Open throughout the day — join in as life allows.</p></div></div>
+      <div class="schedule-item"><div class="schedule-day">TUESDAY</div><div><h3>Story Tuesday · 8 PM</h3><p>Real-life stories, questions and shared perspectives.</p></div></div>
+      <div class="schedule-item"><div class="schedule-day">WEDNESDAY</div><div><h3>CTM Conversation Session · 8 PM</h3><p>Mindset, reflection and the Becoming Journey.</p></div></div>
+      <div class="schedule-item"><div class="schedule-day">FRIDAY</div><div><h3>CTM Party Night · 8 PM</h3><p>Games, laughter and relaxed community connection.</p></div></div>
+    </div></div></section>
 
-            <!-- CTA Button -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" 
-                   class="bg-ctmBrightOrange text-ctmDark font-semibold px-5 py-2.5 rounded-full text-sm shadow-lg hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/20 transition-all transform hover:-translate-y-0.5">
-                    Join Community (Free)
-                </a>
-            </div>
+    <section class="section" id="opportunities"><div class="wrap"><div class="section-head"><div class="eyebrow">More possibilities</div><h2 class="subhead">Your next opportunity could start with a conversation.</h2><p class="intro">CTM shares opportunities and helps members discover useful next steps for their goals.</p></div><div class="grid-2">
+      <article class="card"><img class="card-image" src="./images/259108.png" alt="Original CTM jobs and opportunities screenshot"><h3>Jobs and opportunities</h3><p>Discover job openings, internships, scholarships, free courses, freelance opportunities, collaborations and relevant programmes shared with the community.</p></article>
+      <article class="card"><img class="card-image" src="./images/259111.png" alt="Original CTM opportunities screenshot"><h3>Let people discover your work</h3><p>Crafters can share legitimate projects, services, products, classes and webinars through the community’s member-promotion process. Posts are reviewed and scheduled to keep the space useful.</p></article>
+    </div></div></section>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-ctmOffWhite p-2 focus:outline-none" aria-label="Toggle navigation menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
+    <section class="section cream-section" id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">A glimpse inside CTM</div><h2 class="subhead">Real people. Real community moments.</h2><p class="intro">These are original community images shared to help visitors understand the activities and conversations that happen inside CTM.</p></div><div class="gallery">
+      <figure><img src="./images/259086.png" alt="Original daily conversation screenshot"><figcaption>Daily Conversation</figcaption></figure>
+      <figure><img src="./images/259089.png" alt="Original Friday Party Night screenshot"><figcaption>Friday Party Night</figcaption></figure>
+      <figure><img src="./images/259093.png" alt="Original Story Tuesday screenshot"><figcaption>Story Tuesday</figcaption></figure>
+      <figure><img src="./images/259102.png" alt="Original CTM conversation session screenshot"><figcaption>CTM Conversation Session</figcaption></figure>
+      <figure><img src="./images/259108.png" alt="Original jobs and opportunities screenshot one"><figcaption>Jobs &amp; Opportunities</figcaption></figure>
+      <figure><img src="./images/259111.png" alt="Original jobs and opportunities screenshot two"><figcaption>Opportunities shared with Crafters</figcaption></figure>
+      <figure><img src="./images/259113.png" alt="Original LinkedIn community activity screenshot"><figcaption>LinkedIn Community Activity</figcaption></figure>
+    </div><p class="fineprint">Before publishing screenshots publicly, make sure members have agreed to share any names, photos or private conversation details visible in them.</p></div></section>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-ctmDeep border-b border-ctmSecondary/40 px-6 py-6 space-y-4">
-            <a href="#about" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">About</a>
-            <a href="#community-life" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Community Life</a>
-            <a href="#opportunities" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Opportunities</a>
-            <a href="#stories" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">Member Stories</a>
-            <a href="#book" class="block text-base font-medium text-ctmOffWhite hover:text-ctmBrightOrange">The Book</a>
-            <div class="pt-4 border-t border-ctmSecondary/30">
-                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" 
-                   class="block w-full text-center bg-ctmBrightOrange text-ctmDark font-bold py-3 rounded-xl shadow-md">
-                    Join Community (Free)
-                </a>
-            </div>
-        </div>
-    </header>
+    <section class="section"><div class="wrap split"><div><div class="eyebrow">Meet the founder</div><h2 class="subhead">A community built around becoming — without losing yourself.</h2><img class="portrait" src="./images/258183.png" alt="Chichi Stanley, founder of Crafting the Mind" loading="lazy"></div><div><p class="intro">“I created Crafting the Mind because I believe becoming better shouldn't require people to lose themselves in the process.</p><p class="intro">I wanted to create a space for people who are figuring things out, people navigating purpose, clarity, work, relationships, growth and the everyday work of being human.</p><p class="intro">CTM started with conversations about how we think, work, grow and navigate life, with mindset at the centre. Today, it has grown into a community where people can learn, build, discover opportunities and become better together.”</p><div class="person"><div><strong>Chichi Stanley</strong><span>Founder, Crafting the Mind</span></div></div></div></div></section>
 
-    <section class="relative hero-glow pt-20 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-ctmSecondary/20">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <!-- Community Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ctmSecondary/30 border border-ctmBrightOrange/30 text-ctmSoftOrange text-xs sm:text-sm font-medium mb-8 shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-ctmBrightOrange animate-pulse"></span>
-                <span>Home to 200+ Active Crafters</span>
-            </div>
+    <section class="section cream-section"><div class="wrap split"><div><div class="eyebrow">A Crafter’s voice</div><h2 class="subhead">Honest conversations can make a difference.</h2><img class="portrait" src="./images/271526.jpg" alt="Original member testimonial screenshot" loading="lazy"></div><div><blockquote class="quote">“What made me stay on CTM is the honest conversations that take place on the different sections of CTM. And also the way members and non-members receive clarity on burning questions or issues raised.”</blockquote><div class="person"><img src="./images/271629.png" alt="Praise God, CTM member" loading="lazy"><div><strong>Praise God</strong><span>Teacher educator · CTM member</span></div></div></div></div></section>
 
-            <!-- Hero Headline -->
-            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-ctmOffWhite leading-[1.15] mb-6">
-                Come as you are.<br />
-                <span class="italic text-ctmSoftOrange">Become better than you were.</span>
-            </h1>
+    <section class="section" id="learning"><div class="wrap"><div class="section-head"><div class="eyebrow">Learning & growth</div><h2 class="subhead">Useful learning for your next step.</h2><p class="intro">CTM makes room for practical learning, career clarity and skills development. Here are examples of past learning activities and sessions.</p></div><div class="grid-2">
+      <article class="card"><img class="card-image" src="./images/263511.png" alt="Navigating Your Career Path With Clarity learning flyer" loading="lazy"><h3>Navigating Your Career Path With Clarity</h3><p>A past CTM learning session focused on career direction and clarity.</p></article>
+      <article class="card"><img class="card-image" src="./images/263513.png" alt="Turn Your Skill Into Magnetic Income learning flyer" loading="lazy"><h3>Turn Your Skill Into Magnetic Income</h3><p>A CTM learning event flyer. Check community announcements for any future edition or current learning opportunities.</p></article>
+    </div></div></section>
 
-            <!-- Supporting Message -->
-            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-ctmOffWhite/80 font-normal leading-relaxed mb-10">
-                A community for professionals and people building meaningful lives, careers, skills, and ideas with a positive mindset. We put mindset first because how we think influences how we work, build, grow, and navigate life.
-            </p>
+    <section class="section cream-section" id="resources"><div class="wrap split"><div><div class="eyebrow">The Crafter’s Shelf</div><h2 class="subhead">Resources to help you take the next step.</h2><p class="intro">Explore reflection exercises and practical tools prepared for Crafters.</p><img class="book-art" src="./images/20261008_201559.png" alt="I See You resource image" loading="lazy"><p><a class="btn" href="https://bit.ly/ISeeyouCRAFTER" target="_blank" rel="noopener">Explore “I See You” ↗</a></p></div><div class="resource-list">
+      <article class="resource"><div><strong>LinkedIn Content-to-Opportunity Playbook</strong><p>A resource for using LinkedIn content to create opportunities.</p></div><a href="./resources/CTM_LinkedIn_Content_to_Opportunity_Playbook.pdf" target="_blank" rel="noopener">Open PDF ↗</a></article>
+      <article class="resource"><div><strong>LinkedIn Profile Audit Kit</strong><p>A practical tool to review and improve your LinkedIn profile.</p></div><a href="./resources/CTM_LinkedIn_Profile_Audit_Kit.pdf" target="_blank" rel="noopener">Open PDF ↗</a></article>
+      <article class="resource"><div><strong>CTM Identity Reset Journal</strong><p>Prompts for reflection and personal clarity.</p></div><a href="./resources/CTM%20Identity%20Reset%20Journal.pdf" target="_blank" rel="noopener">Open PDF ↗</a></article>
+      <article class="resource"><div><strong>CTM Identity Mapping Exercise</strong><p>A guided exercise for exploring identity and direction.</p></div><a href="./resources/CTM%20Identity%20Mapping%20Exercise%20002.pdf" target="_blank" rel="noopener">Open PDF ↗</a></article>
+      <article class="resource"><div><strong>CTM Identity Reflection Sheet</strong><p>A simple resource for thoughtful self-reflection.</p></div><a href="./resources/CTM%20Identity%20Reflection%20Sheet.pdf" target="_blank" rel="noopener">Open PDF ↗</a></article>
+    </div></div></section>
 
-            <!-- CTA Group -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer"
-                   class="w-full sm:w-auto bg-ctmBrightOrange text-ctmDark font-semibold px-8 py-4 rounded-full text-base shadow-xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/30 transition-all transform hover:-translate-y-0.5 text-center">
-                    JOIN THE CTM COMMUNITY — IT’S CURRENTLY FREE.
-                </a>
-                <a href="#community-life" 
-                   class="w-full sm:w-auto bg-transparent border border-ctmSecondary text-ctmOffWhite hover:border-ctmBrightOrange font-medium px-8 py-4 rounded-full text-base transition-all text-center">
-                    See What Happens Inside
-                </a>
-            </div>
+    <section class="section"><div class="wrap"><div class="cta-band"><div><h2>There’s a place for you in CTM.</h2><p>Come for the conversations. Stay for the learning, opportunities and people you grow alongside.</p></div><a class="btn" href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener">Join the CTM Community — It’s Currently Free ↗</a></div></div></section>
+  </main>
 
-            <!-- Proof footer in hero -->
-            <div class="mt-12 pt-8 border-t border-ctmSecondary/30 flex flex-wrap justify-center items-center gap-6 text-xs sm:text-sm text-ctmOffWhite/60 tracking-wider uppercase">
-                <span>Real conversations</span>
-                <span class="text-ctmBrightOrange">•</span>
-                <span>Real opportunities</span>
-                <span class="text-ctmBrightOrange">•</span>
-                <span>Real growth</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Our Core Philosophy</span>
-            <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">More than just a WhatsApp group. A space for intentional craft.</h2>
-            <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
-                CTM is designed to cut through noise and superficial networking. Here, professionals, creators, and thinkers come together to exchange clarity, share experiences, and support one another's personal and professional evolution.
-            </p>
-        </div>
-
-        <!-- 4 Core Pillars Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Pillar 1 -->
-            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
-                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
-                    01
-                </div>
-                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Mindset First</h3>
-                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                    How you think dictates what you build. We nurture mental resilience, emotional intelligence, and a positive outlook on challenges.
-                </p>
-            </div>
-
-            <!-- Pillar 2 -->
-            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
-                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
-                    02
-                </div>
-                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Real Conversations</h3>
-                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                    No fluff or empty hype. Honest dialogue about career dilemmas, creative roadblocks, life choices, and personal discoveries.
-                </p>
-            </div>
-
-            <!-- Pillar 3 -->
-            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
-                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
-                    03
-                </div>
-                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Practical Opportunities</h3>
-                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                    Access real job leads, gig openings, skill-building sessions, and collaborative partnerships shared by active members.
-                </p>
-            </div>
-
-            <!-- Pillar 4 -->
-            <div class="glass-panel p-8 rounded-3xl relative group hover:border-ctmBrightOrange/50 transition-all">
-                <div class="w-12 h-12 rounded-2xl bg-ctmSecondary/50 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
-                    04
-                </div>
-                <h3 class="font-serif text-xl font-medium text-ctmOffWhite mb-3">Intentional Growth</h3>
-                <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                    Progress tracked over time with peer accountability, book discussions, learning sprints, and supportive feedback loops.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="community-life" class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <div>
-                    <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Inside the Community</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite">What Happens Inside CTM</h2>
-                </div>
-                <p class="max-w-md text-ctmOffWhite/70 text-sm sm:text-base">
-                    Every week brings engaging sessions, spontaneous insights, and structured touchpoints designed to keep you inspired and connected.
-                </p>
-            </div>
-
-            <!-- Editorial Grid of Community Activities -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
-                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
-                        <!-- Image Container with Asset Map Hook -->
-                        <img src="" data-asset-key="julyMeetScreenshot" alt="CTM Google Meet Session" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Google+Meet+Session';"
-                             class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Live Sessions</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">CTM Conversation Sessions</h3>
-                            <p class="text-sm text-ctmOffWhite/70">Deep-dive Google Meet discussions tackling career pivots, clarity, mindset shifts, and real-world problem solving.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
-                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
-                        <img src="" data-asset-key="additionalActivity1" alt="Daily Conversations & Story Tuesday" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Story+Tuesday+%26+Daily+Talks';"
-                             class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Weekly Traditions</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">Story Tuesday & Friday Party Night</h3>
-                            <p class="text-sm text-ctmOffWhite/70">Signature weekly moments where members share personal reflections, unwind, celebrate milestones, and connect on a human level.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-panel rounded-3xl overflow-hidden flex flex-col">
-                    <div class="h-56 bg-ctmSecondary/20 relative flex items-center justify-center border-b border-ctmSecondary/30 overflow-hidden">
-                        <img src="" data-asset-key="additionalActivity2" alt="Opportunities & LinkedIn Activity" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/241204/FFA14E?text=Opportunities+Board';"
-                             class="w-full h-full object-cover">
-                        <span class="absolute top-4 left-4 bg-ctmDark/85 backdrop-blur-md text-xs text-ctmBrightOrange px-3 py-1 rounded-full border border-ctmBrightOrange/30">Growth & Gigs</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-serif text-xl text-ctmOffWhite mb-2">Job Leads & Practical Opportunities</h3>
-                            <p class="text-sm text-ctmOffWhite/70">A dedicated stream for job opportunities, freelance gigs, learning resources, and mutual recommendations among crafters.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="opportunities" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Continuous Learning</span>
-            <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Learning Sessions & Community Highlights</h2>
-            <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
-                We regularly curate impactful masterclasses and sessions designed to sharpen skills, increase earning potential, and bring professional clarity.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- Flyer 1 -->
-            <div class="glass-panel p-6 rounded-3xl flex flex-col sm:flex-row gap-6 items-center">
-                <div class="w-full sm:w-1/2 h-64 rounded-2xl overflow-hidden bg-ctmSecondary/30 border border-ctmSecondary/50 flex items-center justify-center">
-                    <img src="" data-asset-key="julyFlyer" alt="Navigating Your Career Path With Clarity Flyer"
-                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/241204/FFA14E?text=Career+Path+Flyer';"
-                         class="w-full h-full object-contain">
-                </div>
-                <div class="w-full sm:w-1/2 space-y-4">
-                    <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Past Masterclass Highlight</span>
-                    <h3 class="font-serif text-2xl text-ctmOffWhite">Navigating Your Career Path With Clarity</h3>
-                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                        A foundational July session focused on breaking through career confusion, aligning strengths with market demands, and charting sustainable professional trajectories.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Flyer 2 -->
-            <div class="glass-panel p-6 rounded-3xl flex flex-col sm:flex-row gap-6 items-center">
-                <div class="w-full sm:w-1/2 h-64 rounded-2xl overflow-hidden bg-ctmSecondary/30 border border-ctmSecondary/50 flex items-center justify-center">
-                    <img src="" data-asset-key="skillFlyer" alt="Turn Your Skill Into Magnetic Income! Flyer"
-                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/241204/FFA14E?text=Magnetic+Income+Flyer';"
-                         class="w-full h-full object-contain">
-                </div>
-                <div class="w-full sm:w-1/2 space-y-4">
-                    <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Skill & Income Series</span>
-                    <h3 class="font-serif text-2xl text-ctmOffWhite">Turn Your Skill Into Magnetic Income!</h3>
-                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                        An actionable learning session showing members how to package existing knowledge, position expertise effectively, and attract paying clients naturally.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stories" class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Genuine Proof</span>
-                <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Words from Real Crafters</h2>
-                <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
-                    No fabricated success claims. Hear directly from members who experience the depth and value of CTM every single day.
-                </p>
-            </div>
-
-            <!-- Testimonial Featured Card (Praise God) -->
-            <div class="max-w-4xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl relative">
-                <div class="absolute top-6 right-8 text-ctmBrightOrange/20 font-serif text-8xl leading-none select-none pointer-events-none">“</div>
-                
-                <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
-                    <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex-shrink-0 flex items-center justify-center">
-                        <img src="" data-asset-key="praisePortrait" alt="Praise God Portrait"
-                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/241204/FFA14E?text=Praise+God';"
-                             class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-4 text-center md:text-left flex-1">
-                        <blockquote class="font-serif text-lg sm:text-xl text-ctmOffWhite/90 italic leading-relaxed">
-                            “What made me stay on CTM is the honest conversations that take place on the different sections of CTM.<br><br>
-                            And also<br>
-                            The way members and non-members receive clarity on burning questions or issues raised.”
-                        </blockquote>
-                        <div>
-                            <div class="font-bold text-ctmOffWhite text-base">Praise God</div>
-                            <div class="text-xs text-ctmSoftOrange uppercase tracking-wider mt-0.5">Teacher Educator</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Optional screenshot reference note -->
-                <div class="mt-8 pt-6 border-t border-ctmSecondary/30 flex items-center justify-between text-xs text-ctmOffWhite/50 flex-wrap gap-4">
-                    <span>Verified CTM Community Member</span>
-                    <span class="text-ctmSoftOrange">Real conversation proof mapped in repository assets.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="book" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="glass-panel p-8 sm:p-14 rounded-3xl flex flex-col lg:flex-row gap-12 items-center">
-            <!-- Book Artwork -->
-            <div class="w-full lg:w-1/2 flex justify-center">
-                <div class="max-w-xs sm:max-w-sm rounded-2xl overflow-hidden shadow-2xl border border-ctmBrightOrange/30 bg-ctmSecondary/20">
-                    <img src="" data-asset-key="bookImage" alt="I See You Book Promotional Image"
-                         onerror="this.onerror=null; this.src='https://placehold.co/400x550/241204/FFA14E?text=I+See+You+Book';"
-                         class="w-full h-auto object-cover">
-                </div>
-            </div>
-
-            <!-- Book Details & CTA -->
-            <div class="w-full lg:w-1/2 space-y-6">
-                <span class="inline-block bg-ctmSecondary/50 text-ctmSoftOrange text-xs font-semibold px-3 py-1 rounded-full border border-ctmBrightOrange/30">Recommended Reading & Encouragement</span>
-                <h2 class="font-serif text-3xl sm:text-4xl text-ctmOffWhite">The “I See You” Book</h2>
-                <p class="text-base sm:text-lg text-ctmOffWhite/80 leading-relaxed">
-                    Encouragement for the journey, mindset shifts for growth, faith, purpose, clarity, and a heartfelt reminder that you matter. Written to accompany you through seasons of building and personal discovery.
-                </p>
-                <div class="pt-2">
-                    <a href="https://bit.ly/ISeeyouCRAFTER" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 bg-ctmBrightOrange text-ctmDark font-bold px-8 py-4 rounded-full text-base shadow-xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/30 transition-all transform hover:-translate-y-0.5">
-                        <span>EXPLORE THE BOOK</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-ctmDeep border-y border-ctmSecondary/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs uppercase tracking-widest text-ctmSoftOrange font-semibold mb-3 block">Intentional Value</span>
-                <h2 class="font-serif text-3xl sm:text-5xl text-ctmOffWhite mb-6">Why Join CTM Today?</h2>
-                <p class="text-base sm:text-lg text-ctmOffWhite/70 leading-relaxed">
-                    Membership is open, welcoming, and entirely free. Here is what you gain by stepping inside our WhatsApp community:
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Point 1 -->
-                <div class="glass-panel p-8 rounded-3xl space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
-                    <h3 class="font-serif text-xl text-ctmOffWhite">Honest Conversations</h3>
-                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                        Participate in meaningful, unfiltered discussions where professional dilemmas and life questions receive thoughtful perspective.
-                    </p>
-                </div>
-
-                <!-- Point 2 -->
-                <div class="glass-panel p-8 rounded-3xl space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
-                    <h3 class="font-serif text-xl text-ctmOffWhite">Clarity & Perspective</h3>
-                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                        Learn from the diverse lived experiences, wisdom, and constructive feedback of peers navigating similar journeys.
-                    </p>
-                </div>
-
-                <!-- Point 3 -->
-                <div class="glass-panel p-8 rounded-3xl space-y-4">
-                    <div class="w-10 h-10 rounded-xl bg-ctmSecondary/50 flex items-center justify-center text-ctmBrightOrange font-bold">✓</div>
-                    <h3 class="font-serif text-xl text-ctmOffWhite">Relevant Opportunities</h3>
-                    <p class="text-sm text-ctmOffWhite/70 leading-relaxed">
-                        Discover job leads, skill-sharing sessions, and collaborative openings shared by members who want to see others win.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-28 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-t from-ctmSecondary/20 to-transparent pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto relative z-10 space-y-8">
-            <h2 class="font-serif text-4xl sm:text-6xl text-ctmOffWhite leading-tight">
-                Come as you are.<br />
-                <span class="italic text-ctmSoftOrange">Become better than you were.</span>
-            </h2>
-            <p class="max-w-2xl mx-auto text-base sm:text-lg text-ctmOffWhite/80">
-                Join our active community of 200+ Crafters. Participate in honest conversations, learn, share, and grow alongside people building meaningful lives.
-            </p>
-            <div>
-                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer"
-                   class="inline-block bg-ctmBrightOrange text-ctmDark font-bold px-10 py-5 rounded-full text-base sm:text-lg shadow-2xl hover:bg-ctmSoftOrange hover:shadow-ctmBrightOrange/40 transition-all transform hover:-translate-y-1">
-                    JOIN THE CTM COMMUNITY — IT’S CURRENTLY FREE.
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-ctmDeep border-t border-ctmSecondary/40 py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <!-- Brand info -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-ctmSecondary/40 border border-ctmBrightOrange/30 flex items-center justify-center text-ctmBrightOrange font-bold text-lg">
-                    CTM
-                </div>
-                <div>
-                    <span class="font-serif text-lg tracking-wide text-ctmOffWhite block">Crafting the Mind</span>
-                    <span class="text-xs text-ctmSoftOrange">Real conversations. Real opportunities. Real growth.</span>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-ctmOffWhite/70">
-                <a href="#about" class="hover:text-ctmBrightOrange transition-colors">About</a>
-                <a href="#community-life" class="hover:text-ctmBrightOrange transition-colors">Community Life</a>
-                <a href="#opportunities" class="hover:text-ctmBrightOrange transition-colors">Opportunities</a>
-                <a href="#stories" class="hover:text-ctmBrightOrange transition-colors">Member Stories</a>
-                <a href="#book" class="hover:text-ctmBrightOrange transition-colors">The Book</a>
-                <a href="https://chat.whatsapp.com/DvCv6tGCBkMDHV9EHrrBmJ" target="_blank" rel="noopener noreferrer" class="text-ctmBrightOrange font-semibold hover:underline">WhatsApp Community</a>
-            </div>
-
-            <!-- Copyright -->
-            <div class="text-xs text-ctmOffWhite/50 text-center md:text-right">
-                &copy; 2026 Crafting the Mind (CTM) Community.<br />All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle Functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Asset Map Injector: Maps data-asset-key attributes to the ASSET_MAP paths automatically
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img[data-asset-key]');
-            images.forEach(img => {
-                const key = img.getAttribute('data-asset-key');
-                if (ASSET_MAP[key] && !ASSET_MAP[key].includes('REPLACE_WITH_EXACT_GITHUB_PATH')) {
-                    img.src = ASSET_MAP[key];
-                }
-            });
-        });
-    </script>
+  <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#top"><img src="./images/263514.png" alt="Crafting the Mind CTM logo"><span>Crafting the Mind (CTM)</span></a><div><p>Real conversations. Real opportunities. Real growth.</p><p>Come as you are. Become better than you were.</p></div></div><div class="wrap fineprint">© <span id="year"></span> Crafting the Mind Community.</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
